@@ -1,0 +1,17 @@
+%%writefile rfftr.py
+import numpy as np
+from scipy.io import wavfile
+
+
+def rfft_function(input_signal):
+    # Apply RFFT operation to the input signal
+    rfft_result = np.fft.rfft(input_signal)
+
+    # Calculate the magnitude
+    magnitude = np.abs(rfft_result)
+
+    # Save the shape of the magnitude
+    magnitude_shape = magnitude.shape
+    return rfft_result, magnitude_shape
+
+
